@@ -1,3 +1,13 @@
+'''
+This code will allow you to track an face and it will provide you with the name of the person
+in the image. 
+
+***Read the code before you start!***
+
+When using this code make sure you add your own images to lines 20 & 21. 
+If you are using only one images then comment out lines 21, 23, 28, , 51 & 52.
+'''
+
 import cv2 
 import face_recognition
 import dlib
@@ -6,14 +16,16 @@ video_capture = cv2.VideoCapture(0, cv2.CAP_V4L2)
 
 print(cv2.CAP_PROP_FPS)
 
-image = face_recognition.load_image_file("jake.jpg")
-abbie = face_recognition.load_image_file("abbie2.jpg")
-jake_encoding = face_recognition.face_encodings(image)[0]
-abbie_encoding = face_recognition.face_encodings(abbie)[0]
+# Add  your own image file below 
+img1 = face_recognition.load_image_file("jake.jpg")
+img2 = face_recognition.load_image_file("abbie2.jpg")
+img1_encoding = face_recognition.face_encodings(img1)[0]
+img2_encoding = face_recognition.face_encodings(img2)[0]
+
 
 known_faces = [
-jake_encoding,
-abbie_encoding,
+img1_encoding,
+img2_encoding,
 ]
 
 face_locations = []

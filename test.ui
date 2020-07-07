@@ -14,108 +14,110 @@
    <string>MainWindow</string>
   </property>
   <widget class="QWidget" name="centralwidget">
-   <widget class="QSplitter" name="splitter">
-    <property name="geometry">
-     <rect>
-      <x>10</x>
-      <y>0</y>
-      <width>404</width>
-      <height>501</height>
-     </rect>
-    </property>
-    <property name="orientation">
-     <enum>Qt::Vertical</enum>
-    </property>
-    <widget class="QWidget" name="layoutWidget">
+   <layout class="QGridLayout" name="gridLayout">
+    <item row="0" column="0">
      <layout class="QHBoxLayout" name="horizontalLayout">
       <item>
-       <widget class="QLabel" name="label">
-        <property name="maximumSize">
-         <size>
-          <width>101</width>
-          <height>16777215</height>
-         </size>
-        </property>
-        <property name="styleSheet">
-         <string notr="true">font: 75 11pt &quot;Ubuntu Condensed&quot;;
+       <layout class="QVBoxLayout" name="verticalLayout">
+        <item>
+         <widget class="QLabel" name="label">
+          <property name="maximumSize">
+           <size>
+            <width>101</width>
+            <height>16777215</height>
+           </size>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">font: 75 11pt &quot;Ubuntu Condensed&quot;;
 font: 15pt &quot;Ubuntu&quot;;</string>
-        </property>
-        <property name="text">
-         <string>FaceRecog</string>
-        </property>
-       </widget>
-      </item>
-      <item>
-       <widget class="QFrame" name="frame">
-        <property name="frameShape">
-         <enum>QFrame::StyledPanel</enum>
-        </property>
-        <property name="frameShadow">
-         <enum>QFrame::Raised</enum>
-        </property>
-        <layout class="QFormLayout" name="formLayout">
-         <item row="0" column="0" colspan="2">
-          <layout class="QFormLayout" name="formLayout_2">
-           <item row="0" column="0">
-            <widget class="QLabel" name="label_2">
+          </property>
+          <property name="text">
+           <string>FaceRecog</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QLabel" name="label_3">
+          <property name="text">
+           <string>---Welcome---</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QFrame" name="frame">
+          <property name="frameShape">
+           <enum>QFrame::StyledPanel</enum>
+          </property>
+          <property name="frameShadow">
+           <enum>QFrame::Raised</enum>
+          </property>
+          <layout class="QGridLayout" name="gridLayout_2">
+           <item row="2" column="0">
+            <spacer name="horizontalSpacer">
+             <property name="orientation">
+              <enum>Qt::Horizontal</enum>
+             </property>
+             <property name="sizeHint" stdset="0">
+              <size>
+               <width>193</width>
+               <height>20</height>
+              </size>
+             </property>
+            </spacer>
+           </item>
+           <item row="4" column="0">
+            <widget class="QPushButton" name="pushButton_3">
              <property name="text">
-              <string>Datset</string>
+              <string>RUN</string>
              </property>
             </widget>
            </item>
-           <item row="0" column="1">
-            <widget class="QLineEdit" name="lineEdit"/>
+           <item row="0" column="0">
+            <layout class="QFormLayout" name="formLayout_2">
+             <item row="0" column="0">
+              <widget class="QLabel" name="label_2">
+               <property name="text">
+                <string>Datset</string>
+               </property>
+              </widget>
+             </item>
+             <item row="0" column="1">
+              <widget class="QLineEdit" name="lineEdit"/>
+             </item>
+             <item row="1" column="1">
+              <widget class="QPushButton" name="pushButton">
+               <property name="text">
+                <string>Browse</string>
+               </property>
+              </widget>
+             </item>
+            </layout>
            </item>
-           <item row="1" column="1">
-            <widget class="QPushButton" name="pushButton">
+           <item row="3" column="0">
+            <widget class="QProgressBar" name="progressBar">
+             <property name="value">
+              <number>24</number>
+             </property>
+            </widget>
+           </item>
+           <item row="1" column="0">
+            <widget class="QPushButton" name="pushButton_2">
              <property name="text">
-              <string>Browse</string>
+              <string>LOAD</string>
              </property>
             </widget>
            </item>
           </layout>
-         </item>
-         <item row="1" column="0">
-          <spacer name="horizontalSpacer">
-           <property name="orientation">
-            <enum>Qt::Horizontal</enum>
-           </property>
-           <property name="sizeHint" stdset="0">
-            <size>
-             <width>193</width>
-             <height>20</height>
-            </size>
-           </property>
-          </spacer>
-         </item>
-         <item row="1" column="1">
-          <widget class="QPushButton" name="pushButton_2">
-           <property name="text">
-            <string>LOAD</string>
-           </property>
-          </widget>
-         </item>
-         <item row="2" column="0">
-          <widget class="QProgressBar" name="progressBar">
-           <property name="value">
-            <number>24</number>
-           </property>
-          </widget>
-         </item>
-         <item row="3" column="0">
-          <widget class="QPushButton" name="pushButton_3">
-           <property name="text">
-            <string>RUN</string>
-           </property>
-          </widget>
-         </item>
-        </layout>
-       </widget>
+         </widget>
+        </item>
+       </layout>
       </item>
      </layout>
-    </widget>
-    <widget class="QTextBrowser" name="debugText"/>
-   </widget>
+    </item>
+    <item row="1" column="0">
+     <widget class="QTextBrowser" name="debugText"/>
+    </item>
+   </layout>
   </widget>
   <widget class="QStatusBar" name="statusbar"/>
  </widget>
@@ -128,8 +130,8 @@ font: 15pt &quot;Ubuntu&quot;;</string>
    <slot>browseSlot()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>401</x>
-     <y>62</y>
+     <x>432</x>
+     <y>129</y>
     </hint>
     <hint type="destinationlabel">
      <x>455</x>
@@ -144,8 +146,8 @@ font: 15pt &quot;Ubuntu&quot;;</string>
    <slot>loadSlot()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>402</x>
-     <y>99</y>
+     <x>413</x>
+     <y>161</y>
     </hint>
     <hint type="destinationlabel">
      <x>452</x>
@@ -160,8 +162,8 @@ font: 15pt &quot;Ubuntu&quot;;</string>
    <slot>returnedPressedSlot()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>246</x>
-     <y>32</y>
+     <x>310</x>
+     <y>98</y>
     </hint>
     <hint type="destinationlabel">
      <x>11</x>
@@ -176,12 +178,12 @@ font: 15pt &quot;Ubuntu&quot;;</string>
    <slot>progress()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>175</x>
-     <y>118</y>
+     <x>186</x>
+     <y>218</y>
     </hint>
     <hint type="destinationlabel">
-     <x>7</x>
-     <y>109</y>
+     <x>149</x>
+     <y>308</y>
     </hint>
    </hints>
   </connection>
@@ -192,8 +194,8 @@ font: 15pt &quot;Ubuntu&quot;;</string>
    <slot>runSlot()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>168</x>
-     <y>146</y>
+     <x>179</x>
+     <y>249</y>
     </hint>
     <hint type="destinationlabel">
      <x>442</x>
